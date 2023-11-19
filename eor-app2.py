@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import joblib
+from catboost import CatBoostClassifier, Pool
 # Load the saved neural network model
-
-pickled_model = joblib.load(open('catboost-model.pkl', 'rb'))
+model = joblib.load(open('catboost-model.pkl', 'rb'))
 train_df = pd.read_excel('train.xlsx', sheet_name='Sheet1')
 
 
@@ -45,8 +45,9 @@ def main():
 
  
 
-        # Apply the neural network model
+        # Apply the Catboost model
         user_prediction = model.predict(user_df)
+        predicted_label= np.array(user_prediction).reshape(-1)
         #predicted_label = np.argmax(user_prediction.reshape(-1, user_prediction.shape[0]), axis=0)  # Assuming the output layer uses softmax activation
 
         # Decode predicted label
@@ -54,7 +55,7 @@ def main():
         st.subheader("Predicted EOR Type")
         result_df = pd.DataFrame({'Density': [density], 'Viscosity': [viscosity], 'Oil Saturation': [oil_saturation],
                                   'Permeability': [permeability], 'Depth': [depth], 'Temperature': [temperature],
-                                  'Predicted EOR Type': [user_prediction]})
+                                  'Predicted EOR Type': [predicted_label]})
         st.table(result_df)
 
         # Display result in a bar plot (using Plotly)
