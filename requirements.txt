@@ -9,7 +9,7 @@ pytype
 scikit-learn
 scipy
 openpyxl
-Catboost
+catboost
 
 
 
