@@ -1,0 +1,15 @@
+joblib
+matplotlib
+numpy
+pandas
+plotly
+plotly-express
+streamlit
+pytype
+scikit-learn
+scipy
+openpyxl
+Catboost
+Pickle
+
+
