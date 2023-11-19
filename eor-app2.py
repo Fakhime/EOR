@@ -14,7 +14,7 @@ train_df = pd.read_excel('train.xlsx', sheet_name='Sheet1')
 
 # Streamlit app
 def main():
-    st.title("EOR Type Prediction App")
+    st.title("EOR Screening App")
 
     # Sidebar for user input
     st.sidebar.header("User Input")
