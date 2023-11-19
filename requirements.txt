@@ -10,6 +10,7 @@ scikit-learn
 scipy
 openpyxl
 catboost
+seaborn
 
 
 
