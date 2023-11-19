@@ -9,7 +9,7 @@ import plotly.express as px
 import joblib
 # Load the saved neural network model
 
-pickled_model = joblib.load(open('Catboost-model.pkl', 'rb'))
+pickled_model = joblib.load(open('catboost-model.pkl', 'rb'))
 train_df = pd.read_excel('train.xlsx', sheet_name='Sheet1')
 
 
