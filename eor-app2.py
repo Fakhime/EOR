@@ -6,10 +6,10 @@ from keras.models import load_model
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
-import pickle
 import joblib
 # Load the saved neural network model
-pickled_model = pickle.load(open('Catboost-model.pkl', 'rb'))
+
+pickled_model = joblib.load(open('Catboost-model.pkl', 'rb'))
 train_df = pd.read_excel('train.xlsx', sheet_name='Sheet1')
 
 
