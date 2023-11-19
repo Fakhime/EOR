@@ -60,7 +60,7 @@ def main():
 
         # Display result in a bar plot (using Plotly)
         st.subheader("Bar Plot of Predicted EOR Type")
-        bar_plot = px.bar(x=result_df.columns, y=result_df.iloc[0].values, title="Predicted EOR Type Distribution")
+        bar_plot = px.bar(x=result_df.columns, y=result_df.iloc[0].values, title="EOR Screening Input Distribution")
         st.plotly_chart(bar_plot)
 
         # Create pair plot for user input and predicted result
